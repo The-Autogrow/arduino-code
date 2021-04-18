@@ -12,8 +12,7 @@ void setup(){
 void loop(){
     taux1=analogRead(capt_1);
     taux2=analogRead(capt_2);
-    Serial.println(taux1);
-    delay(1000);
-    Serial.println(taux2);
+    Serial.println(map(taux1,0,1024,0,100));
+    Serial.println(map(taux2,0,1024,0,100));
     delay(1000);
 }
