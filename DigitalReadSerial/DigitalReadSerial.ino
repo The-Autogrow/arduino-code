@@ -93,7 +93,7 @@ void loop(){
         }
         digitalWrite(pompe,LOW);
     }
-    Serial.println(DHT.temperature)
-    Serial.println(DHT.temperature)
+    Serial.println(DHT.temperature);
+    Serial.println(DHT.temperature);
     delay(1000);
 }
