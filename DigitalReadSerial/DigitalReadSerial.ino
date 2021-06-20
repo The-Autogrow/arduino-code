@@ -11,7 +11,6 @@ String trad1, trad2;
 int taux1,taux2,eau_hiver,eau_été,temperature_hiver,temperature_été,inputString,junk,a;
 void setup(){
     Serial.begin(9600);
-    Serial.println("lets go");
     pinMode(capt_1,INPUT);
     pinMode(capt_2,INPUT);
     pinMode(pompe,OUTPUT);
@@ -19,8 +18,7 @@ void setup(){
     if (! rtc.begin()){
         digitalWrite(13, HIGH);
         delay(1000);
-        digitalWrite(13,LOW);
-        Serial.println("ca marche pas");
+        digitalWrite(13,LOW); 
         while (1);
    }
     while (a!=1){
@@ -39,7 +37,6 @@ void setup(){
                     temperature_hiver= 12;
                     temperature_été= 25;
                     a=1;
-                    Serial.println("yeah");
                     break;
                 case 'B':
                     eau_hiver='pot';
@@ -98,7 +95,7 @@ void loop(){
         }
         digitalWrite(pompe,LOW);
     }
-    Serial.println((float)DHT11.humidity, 2);
     Serial.println((float)DHT11.temperature, 2);
+    Serial.println((float)DHT11.humidity, 2);
     delay(1000);
 }
